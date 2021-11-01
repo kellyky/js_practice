@@ -13,5 +13,21 @@
 */
 
 const toRoman = (num) => {
+  let romanNumeral = ""; // the variable we'll use to build the numeral
+
+  // Thousands builder
+  let M = (num - (num % 1000)) / 1000; // Sets M to the qty of even thousands
+  M = 'M'.repeat(M); // concats an "M" to M for each even thousand
+
+  let remainder = num % 1000; // holds the remainder after each "round"
+  console.log("\n" + "Number entered: " + num); // statement temporaru
+  console.log("Remainder: " + remainder); // statement is temporary
+
+  romanNumeral = M; // I *think* this will end up being M + D + ....
+  return romanNumeral;
 
 }
+
+console.log(toRoman(1000));
+console.log(toRoman(4321));
+console.log(toRoman(2999));
