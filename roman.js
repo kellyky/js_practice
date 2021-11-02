@@ -1,26 +1,3 @@
-/*    NOTES AS I GO
- *    M: 
- *      - When M is before the thousand (like 900) -- NOT yet accounted for
- *    D: 
- *      - even 500s accounted for
- *      - I'm not sure if I have more work on Ds...
- *    C:
- *      - Numbers like 90, 190, 290.... NOT YET accounted for
- *
- *    L:
- *      - 
- *
- *    X: 
- *      - 
- *
- *    V:
- *      - 
- *
- *    I:
- *      - 
- *
-*/
-
 const toRoman = (num) => {
   let romanNumeral = "";
 
@@ -31,13 +8,12 @@ const toRoman = (num) => {
   let remainder = num % 1000; 
 
   // 500s builder: D
-    // No concatting Ds. 
-    // We only want a D if remainder is 500 or more, or if remainder is less than 1000
   let D = ""; 
   if (remainder >= 500 && remainder < 1000) {
     D = "D"; 
   } 
-  remainder %= 500; // After we extract "D"s, we move to 100s (Cs)
+  
+  remainder %= 500;
 
   // 100s builder: C
   let C = (remainder - (remainder % 100)) / 100;
@@ -45,7 +21,7 @@ const toRoman = (num) => {
 
   remainder %= 100;
 
-  // 50s builder: L -> like D, do not concat
+  // 50s builder: L
   let L = ""
   if (remainder >= 50 && remainder < 100) {
     L = "L";
@@ -60,19 +36,29 @@ const toRoman = (num) => {
   remainder %= 10;
 
 
+  // 5s builder: V
+  let V = ""
+  if (remainder >= 5 && remainder < 10) {
+    V = "V";
+  }
 
+  remainder %= 5;
 
+  // 1s builder: I
 
+  let I = (remainder - (remainder % 1)) / 1;
+  I = 'I'.repeat(I);
 
+  remainder %= 1;
+  
+   
+  // temp - delete once things are working 
+  console.log("\n" + "Number entered: " + num); 
+  console.log("Remainder: " + remainder); 
 
-
-  console.log("\n" + "Number entered: " + num); // statement temporaru
-  console.log("Remainder: " + remainder); // statement is temporary
-
-  romanNumeral = M + D + C + L + X; // I *think* this will end up being M + D + ....
+  // keepers
+  romanNumeral = M + D + C + L + X + V + I;
   return romanNumeral;
 }
 
-console.log(toRoman(1060));
-console.log(toRoman(3321));
-console.log(toRoman(2999));
+console.log(toRoman(900));
