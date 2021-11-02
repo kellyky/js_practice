@@ -37,13 +37,13 @@ const toRoman = (num) => {
   if (remainder >= 500 && remainder < 1000) {
     D = "D"; 
   } 
-  remainder = remainder % 500; // After we extract "D"s, we move to 100s (Cs)
+  remainder %= 500; // After we extract "D"s, we move to 100s (Cs)
 
   // 100s builder: C
   let C = (remainder - (remainder % 100)) / 100;
   C = 'C'.repeat(C);
 
-  remainder = remainder % 100;
+  remainder %= 100;
 
   // 50s builder: L -> like D, do not concat
   let L = ""
@@ -51,7 +51,13 @@ const toRoman = (num) => {
     L = "L";
   }
 
-  remainder = remainder % 50;
+  remainder %= 50;
+
+  // 10s builder: X 
+  let X = (remainder - (remainder % 10)) / 10;
+  X = 'X'.repeat(X);
+
+  remainder %= 10;
 
 
 
@@ -63,11 +69,10 @@ const toRoman = (num) => {
   console.log("\n" + "Number entered: " + num); // statement temporaru
   console.log("Remainder: " + remainder); // statement is temporary
 
-  romanNumeral = M + D + C + L; // I *think* this will end up being M + D + ....
+  romanNumeral = M + D + C + L + X; // I *think* this will end up being M + D + ....
   return romanNumeral;
 }
 
-console.log(toRoman(1050));
-console.log(toRoman(4321));
+console.log(toRoman(1060));
+console.log(toRoman(3321));
 console.log(toRoman(2999));
-console.log(toRoman(2599));
