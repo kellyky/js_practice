@@ -3,8 +3,8 @@ const toRoman = (num) => {
   let romanNumeral = "";
   let M = "", D = "", C = "", L = "", X = "", V = "", I = "";
   
-  M = (num - (num % 1000)) / 1000; 
-  M = 'M'.repeat(M); 
+  let repeatThisManyTimes = (num - (num % 1000)) / 1000; 
+  M = 'M'.repeat(repeatThisManyTimes); 
   let remainder = num % 1000; 
   
   if (remainder >= 900 && remainder < 1000) {
@@ -22,9 +22,9 @@ const toRoman = (num) => {
     remainder -= 400;
   } 
 
-  C = (remainder - (remainder % 100)) / 100;
+  repeatThisManyTimes = (remainder - (remainder % 100)) / 100;
   remainder %= 100;
-  C = 'C'.repeat(C);
+  C = 'C'.repeat(repeatThisManyTimes);
   
   if (remainder >= 90 && remainder < 100) {
     C += "XC";
@@ -41,8 +41,8 @@ const toRoman = (num) => {
     remainder -= 40;
   } 
 
-  X = (remainder - (remainder % 10)) / 10;
-  X = 'X'.repeat(X);
+  repeatThisManyTimes = (remainder - (remainder % 10)) / 10;
+  X = 'X'.repeat(repeatThisManyTimes);
   remainder %= 10;
 
 
@@ -61,8 +61,8 @@ const toRoman = (num) => {
     V += "IV";
   } 
 
-  I = (remainder - (remainder % 1)) / 1;
-  I = 'I'.repeat(I);
+  repeatThisManyTimes = (remainder - (remainder % 1)) / 1;
+  I = 'I'.repeat(repeatThisManyTimes);
   remainder %= 1;
   
   romanNumeral = M + D + C + L + X + V + I;
