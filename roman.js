@@ -1,28 +1,39 @@
 const toRoman = (num) => {
   let romanNumeral = "";
+  let M = "", D = "", C = "", L = "", X = "", V = "", I = "";
 
   // Thousands builder: M
-  let M = (num - (num % 1000)) / 1000; 
+  M = (num - (num % 1000)) / 1000; 
   M = 'M'.repeat(M); 
-
   let remainder = num % 1000; 
+  console.log(remainder);
 
+  // 900, 1900, 2900
+  if (remainder >= 900 && remainder < 1000) {
+    remainder /= 1000;
+    remainder = Math.floor(remainder);
+    console.log(remainder);
+    M += "CM";
+  } 
+  
   // 500s builder: D
-  let D = ""; 
   if (remainder >= 500 && remainder < 1000) {
     D = "D"; 
   } 
-  
+
   remainder %= 500;
 
   // 100s builder: C
-  let C = (remainder - (remainder % 100)) / 100;
+  C = (remainder - (remainder % 100)) / 100;
   C = 'C'.repeat(C);
 
   remainder %= 100;
 
+
+  // remainder -= 900;
+
+  
   // 50s builder: L
-  let L = ""
   if (remainder >= 50 && remainder < 100) {
     L = "L";
   }
@@ -30,14 +41,13 @@ const toRoman = (num) => {
   remainder %= 50;
 
   // 10s builder: X 
-  let X = (remainder - (remainder % 10)) / 10;
+  X = (remainder - (remainder % 10)) / 10;
   X = 'X'.repeat(X);
 
   remainder %= 10;
 
 
   // 5s builder: V
-  let V = ""
   if (remainder >= 5 && remainder < 10) {
     V = "V";
   }
@@ -46,7 +56,7 @@ const toRoman = (num) => {
 
   // 1s builder: I
 
-  let I = (remainder - (remainder % 1)) / 1;
+  I = (remainder - (remainder % 1)) / 1;
   I = 'I'.repeat(I);
 
   remainder %= 1;
@@ -62,3 +72,5 @@ const toRoman = (num) => {
 }
 
 console.log(toRoman(900));
+console.log(toRoman(1900));
+console.log(toRoman(2900));
