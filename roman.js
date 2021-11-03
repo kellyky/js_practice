@@ -10,8 +10,7 @@ const toRoman = (num) => {
 
   // 900, 1900, 2900
   if (remainder >= 900 && remainder < 1000) {
-    // remainder /= 1000;
-    // remainder = Math.floor(remainder);
+    remainder /= 1000;
     M += "CM";
   } 
   
@@ -23,8 +22,7 @@ const toRoman = (num) => {
 
   // 400, 1400, 2400
   if (remainder >= 400 && remainder < 500) {
-    // remainder /= 500;
-    // remainder = Math.floor(remainder);
+    remainder /= 500;
     D += "CD";
   } 
 
@@ -37,7 +35,6 @@ const toRoman = (num) => {
   // 90, 190, 290, etc.
   if (remainder >= 90 && remainder < 100) {
     remainder /= 100;
-    // remainder = Math.floor(remainder);
     C += "XC";
   } 
   
@@ -51,7 +48,6 @@ const toRoman = (num) => {
   // 40, 140, etc. 
   if (remainder >= 40 && remainder < 50) {
     remainder /= 50;
-    // remainder = Math.floor(remainder);
     L += "XL";
   } 
 
@@ -64,7 +60,6 @@ const toRoman = (num) => {
   // 9, 19, 29, etc.
   if (remainder == 10) {
     remainder /= 10;
-    // remainder = Math.floor(remainder);
     X += "IX";
   } 
 
@@ -78,12 +73,10 @@ const toRoman = (num) => {
   // 4, 14, etc. 
   if (remainder == 4) {
     remainder /= 5;
-    // remainder = Math.floor(remainder);
     V += "IV";
   } 
 
   // 1s builder: I
-
   I = (remainder - (remainder % 1)) / 1;
   I = 'I'.repeat(I);
   remainder %= 1;
