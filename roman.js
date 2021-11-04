@@ -5,63 +5,63 @@ const toRoman = (num) => {
 
   let repeatThisManyTimes = (num - (num % 1000)) / 1000; 
   romanNumeral.push('M'.repeat(repeatThisManyTimes)); 
-  let remainder = num % 1000; 
+  let leftoverNumber = num % 1000; 
   
-  if (remainder >= 900 && remainder < 1000) {
+  if (leftoverNumber >= 900 && leftoverNumber < 1000) {
     romanNumeral.push('CM'); 
-    remainder -= 900;
+    leftoverNumber -= 900;
   } 
 
-  if (remainder >= 500 && remainder < 1000) {
+  if (leftoverNumber >= 500 && leftoverNumber < 1000) {
     romanNumeral.push('D');
   } 
-  remainder %= 500;
+  leftoverNumber %= 500;
 
-  if (remainder >= 400 && remainder < 500) {
+  if (leftoverNumber >= 400 && leftoverNumber < 500) {
     romanNumeral.push('CD');
-    remainder -= 400;
+    leftoverNumber -= 400;
   } 
 
-  repeatThisManyTimes = (remainder - (remainder % 100)) / 100;
+  repeatThisManyTimes = (leftoverNumber - (leftoverNumber % 100)) / 100;
   romanNumeral.push('C'.repeat(repeatThisManyTimes)); 
-  remainder %= 100;
+  leftoverNumber %= 100;
   
-  if (remainder >= 90 && remainder < 100) {
+  if (leftoverNumber >= 90 && leftoverNumber < 100) {
     romanNumeral.push('XC'); 
-    remainder -= 90;
+    leftoverNumber -= 90;
   } 
   
-  if (remainder >= 50 && remainder < 100) {
+  if (leftoverNumber >= 50 && leftoverNumber < 100) {
     romanNumeral.push('L');
   }
-  remainder %= 50;
+  leftoverNumber %= 50;
 
-  if (remainder >= 40 && remainder < 50) {
+  if (leftoverNumber >= 40 && leftoverNumber < 50) {
     romanNumeral.push('XL');
-    remainder -= 40;
+    leftoverNumber -= 40;
   } 
 
-  repeatThisManyTimes = (remainder - (remainder % 10)) / 10;
+  repeatThisManyTimes = (leftoverNumber - (leftoverNumber % 10)) / 10;
   romanNumeral.push('X'.repeat(repeatThisManyTimes)); 
-  remainder %= 10;
+  leftoverNumber %= 10;
 
 
-  if (remainder == 9) {
+  if (leftoverNumber == 9) {
     romanNumeral.push('IX');
-    remainder -= 9;
+    leftoverNumber -= 9;
   } 
 
-  if (remainder >= 5 && remainder < 10) {
+  if (leftoverNumber >= 5 && leftoverNumber < 10) {
     romanNumeral.push('V');
   }
-  remainder %= 5;
+  leftoverNumber %= 5;
 
-  if (remainder == 4) {
+  if (leftoverNumber == 4) {
     romanNumeral.push('IV');
-    remainder -= 4;
+    leftoverNumber -= 4;
   } 
 
-  repeatThisManyTimes = (remainder - (remainder % 1)) / 1;
+  repeatThisManyTimes = (leftoverNumber - (leftoverNumber % 1)) / 1;
   romanNumeral.push('I'.repeat(repeatThisManyTimes)); 
   
   return romanNumeral.join('');
