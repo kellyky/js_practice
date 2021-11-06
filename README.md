@@ -1,4 +1,8 @@
-Hi! This is my README. Not much to see here yet. 
+Welcome to my treasure trove of javascript exercises. 
+
+In this early iteration, I'll try to keep it simple. The file will be named after the exercise. I may add comments here. 
+
+
 
 At this time, this repo is for 'Roman Numerals' -- Javascript practice. I haven't decided yet whether I'll expand this repo to include the same exercise in other programming languages -- or stay with JS but expand to include other exercises. 
 
