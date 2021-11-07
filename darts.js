@@ -2,19 +2,17 @@
 
 
 const score = (x, y) => {
-  let points;
   let radius = ((x ** 2) + (y ** 2)) ** (0.5);
-  // I *think* we 
 
 
   if (radius < 1) {
-    points = 10;
+    return 10;
   } else if (radius >= 1 && radius < 5) {
-    points = 5;
+    return 5;
   } else if (radius >= 5 && radius < 10) {
-    points = 1;
+    return 1;
   } else {
-    points = 0;
+    return 0;
   }
   console.log(`Coords entered: ${x}, ${y}`);
   return points;
