@@ -62,8 +62,7 @@ const toRoman = (num) => {
     leftoverNumber -= 4;
   } 
 
-  repeatThisManyTimes = (leftoverNumber - (leftoverNumber % 1)) / 1;
-  romanNumeral.push('I'.repeat(repeatThisManyTimes)); 
+  romanNumeral.push('I'.repeat(leftoverNumber)); 
   
   return romanNumeral.join('');
 
