@@ -1,9 +1,12 @@
 Welcome to my treasure trove of javascript exercises. 
 
-In this early iteration, I'll try to keep it simple. The file will be named after the exercise. I may add comments here. 
+## Contents
 
+### From [Exercism's JavaScript 'Exercises'](https://exercism.org/tracks/javascript/exercises)
+* [Darts](https://github.com/kellyky/js_practice/blob/main/darts.js) 
+* [Hamming number](https://github.com/kellyky/js_practice/blob/main/hamming.js)
+* [Luhn formula](https://github.com/kellyky/js_practice/blob/main/luhn.js)
+* [Roman Numerals](https://github.com/kellyky/js_practice/blob/main/roman_numerals.js) 
 
-
-At this time, this repo is for 'Roman Numerals' -- Javascript practice. I haven't decided yet whether I'll expand this repo to include the same exercise in other programming languages -- or stay with JS but expand to include other exercises. 
-
-I got this exercise from [Exercism](https://exercism.org/tracks/javascript/exercises/roman-numerals/) but if you look at their page, they got it from someone else. 
+### From [Eloquent JavaScript](https://eloquentjavascript.net/)
+* (tbd I suppose)
