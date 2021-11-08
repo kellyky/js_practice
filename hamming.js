@@ -7,12 +7,10 @@ const compute = (dna, dna2) => {
 
   let hammingDistance = 0;
 
-  let index = 0;
-  while ( index < dna.length ) {
-    if (dna.charAt(index) != dna2.charAt(index)) {
+  for (let i = 0; i < dna.length; i++) {
+    if (dna.charAt(i) != dna2.charAt(i)) {
       hammingDistance++;
     }
-    index++;
   }
 
   return hammingDistance;
