@@ -8,9 +8,7 @@ const compute = (dna, dna2) => {
   let hammingDistance = 0;
 
   for (let i = 0; i < dna.length; i++) {
-    if (dna.charAt(i) != dna2.charAt(i)) {
-      hammingDistance++;
-    }
+    dna.charAt(i) != dna2.charAt(i) ? hammingDistance++ : hammingDistance += 0;
   }
 
   return hammingDistance;
