@@ -1,4 +1,4 @@
-Welcome to my treasure trove of javascript exercises. 
+
 
 ## Contents
 
@@ -9,4 +9,4 @@ Welcome to my treasure trove of javascript exercises.
 * [Roman Numerals](https://github.com/kellyky/js_practice/blob/main/roman_numerals.js) 
 
 ### From [Eloquent JavaScript](https://eloquentjavascript.net/)
-* (tbd I suppose)
+* [List](https://github.com/kellyky/js_practice/blob/main/list.js) - chapter 4 exercise
