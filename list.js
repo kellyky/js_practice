@@ -8,8 +8,8 @@ const arrayToList = (array) => {
   let list = {};
   for (let item in array) {
     list = {
-      value: null,
-      rest: list,
+      value: array[item],
+      rest: list
     }
   };
   return list;
@@ -17,4 +17,6 @@ const arrayToList = (array) => {
 
 
 console.log(arrayToList([1, 2, 3]));
+console.log(arrayToList([11, "heyo!", 301]));
+console.log(arrayToList([1, 2, 3, 5]));
 
