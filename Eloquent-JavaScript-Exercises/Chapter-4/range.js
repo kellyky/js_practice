@@ -24,27 +24,51 @@
 // }
 
 
-function range(start, end, step=1){
+// Version 2
+// function range(start, end, step=1){
+// let array=[];
+//   if (start == end) {
+//     array.push(start);
+//   } else {
+//     if (start < end) {
+//       for (i = start; i <= end; i = i+step) {
+//         array.push(i);
+//       }
+//     } else {
+//       for (i = start; i >= end; i=i-step) {
+//         array.push(i);
+//       }
+//     }
+//   }
+//       return array;
+// }
+
+function range(start, end=start, step=1){
 let array=[];
-  if (start == end) {
-    array.push(start);
+  if (start < end) {
+    for (i = start; i <= end; i++){
+      array.push(i);
+    }
   } else {
-    if (start < end) {
-      for (i = start; i <= end; i = i+step) {
-        array.push(i);
-      }
-    } else {
-      for (i = start; i >= end; i=i-step) {
-        array.push(i);
-      }
+    for (i = start; i >= end; i=i-step) {
+      array.push(i);
     }
   }
-      return array;
+  return array;
 }
 
-console.log(range(1, 3));
-// [1, 2, 3]
-console.log(range(2, -2, 2));
-// [2, 0, -2]
-console.log(range(10, 30, 5));
-// [10, 15, 20, 25, 30]
+
+
+function sum(array) {
+  let number = 0;
+  for (i = 0; i < array.length; i++) {
+    number += array[i];
+  }
+  return number;
+}
+
+console.log(sum(range(1, 10)));
+// → 55
+
+console.log(sum(range(10, 10)));
+// → 10
