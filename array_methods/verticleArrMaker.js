@@ -2,38 +2,10 @@
 const ABCD = ['ABCD', 'ABCD', 'ABCD', 'ABCD'];
 console.log(ABCD);
 
-// Builds an array of the indices of an array
-const indexArr = arr => {
-  let newArr = [];
-  for (let i in arr) {
-    newArr.push(parseInt(i));
-  }
-  return newArr;
-} 
-
-// Builds an array of the indices of an array
-// function indexArr (arr) {
-//   let indices = [];
-//   for (let index in arr) {
-//     indices.push(parseInt(index));
-//   }
-
-//   return indices;
-// }
-
-const indices = indexArr(ABCD);
-console.log(indices);
-
-
-
-
-
-// const indArr = (ABCD).map((el, index) => { 
-//   return index;
-// })
+const eachIndex = ABCD.map((el, index) => index); 
 
 // const indArr = (ABCD).map((el, index) => index);
-// console.log(indArr);
+console.log(eachIndex);
 
 
 // console.log(indArr(someArr));
