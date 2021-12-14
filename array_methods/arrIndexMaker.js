@@ -1,7 +1,7 @@
 const someArray = ['ABCD', 'DEFG', 'HIJK', 'LMNO'];
 
-// Version 1 - arrow function. indices still need to be converted to int from strings
-const indexArr = arr => {
+// Version 1 - arrow function. 
+const indexArr1 = arr => {
   let newArr = [];
   for (let index in arr) {
     newArr.push(parseInt(index));
@@ -9,8 +9,8 @@ const indexArr = arr => {
   return newArr;
 } 
 
-// Version 2 - regular? function. Indicies still need to be converted to int from strings
-function indexArr (arr) {
+// Version 2 - regular? function.
+function indexArr2 (arr) {
   let indices = [];
   for (let index in arr) {
     indices.push(parseInt(index));
@@ -18,16 +18,18 @@ function indexArr (arr) {
   return indices;
 }
 
-// add optional `const indices = indexArr(someArray);`
-
-
 // Version 3 - map/arrow. 
-const indexArr = (arr).map((el, index) => {
+const indexArr3 = (someArray).map((el, index) => {
   return index;
 })
 
 
-// 3b - map/arrow, more concise
-const indexArr = (arr).map((el, index) => index);
+// Version 4 - map/arrow, more concise
+const indexArr4 = someArray.map((el, index) => index);
 
 
+// calling each of the above, respectively
+console.log(indexArr1(someArray));
+console.log(indexArr2(someArray));
+console.log(indexArr3);
+console.log(indexArr4);
