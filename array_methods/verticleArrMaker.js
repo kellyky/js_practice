@@ -7,75 +7,27 @@ const ABCD = ['ABCD', 'ABCD', 'ABCD', 'ABCD'];
 const indices = ABCD.map((el, iterator) => iterator); 
 
 
-function arrayOfLetter (array, iterator = 0) {
+const arrOfSlices = array => {
   let outerArr = [];
-  let innerArr = [];
-
-  while (iterator < array.length){
-
-    for (let el of array) {
-      innerArr.push(el[iterator]);
-    }
-    iterator++;
-  }
-  outerArr.push(innerArr);
-  return outerArr;
-
-}
-
-console.log(arrayOfLetter(ABCD, ...indices));
-
-const arrayLetters = ((array) => {
-  let outerArr = [];
-  let innerArr = [];
-
-  let iterator = 0;
-  while (iterator < array.length) {
-    for (let el of array) {
-      innerArr.push(el[iterator]);
-    }
-    iterator++;
-  }
-  outerArr.push(innerArr);
-  return outerArr;
-})
-
-console.log(arrayLetters(ABCD));
-
-
-const anotherTry = array => {
-  let outerArr = [];
-  let innerArr = [];
 
   for (let i in array) {
     for (let el of array) {
-      innerArr.push(el[i]);
+      outerArr.push(el[i]);
     }
   }
-  outerArr.push(innerArr);
-  return outerArr;
+  const flattened = outerArr.flat();
+  let newestArr = [];
+
+  for (let x = 0; x < 16; x += 4) {
+     y = x + 4;
+    // const asdf = flattened.slice(x, y).join('');
+    newestArr.push(flattened.slice(x, y).join(''));
+  }
+
+  return newestArr;
 }
 
-console.log(anotherTry(ABCD));
-
-const anotherGo = ABCD.map((el, arr) => {
-  let outerArr = [];
-  let innerArr = [];
-
-  for (let i in arr) {
-    innerArr.push(el[i]);
-  }
-  return outerArr;
-})
-
-console.log(anotherGo);
-
-
-
-
-
-
-
+console.log(arrOfSlices(ABCD));
 
 
 
