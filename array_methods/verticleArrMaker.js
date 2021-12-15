@@ -2,30 +2,92 @@
 
 // The Starting array
 const ABCD = ['ABCD', 'ABCD', 'ABCD', 'ABCD'];
-console.log(ABCD);
 
-// Creates new array of indexes of each off array ABCD
-const indices = ABCD.map((el, index) => index); 
-console.log(indices);
+// Creates new array of iteratores of each off array ABCD
+const indices = ABCD.map((el, iterator) => iterator); 
 
-function arrayOfLetter (array, index = 0) {
-  let theNewArr = [];
-  let letterArr = [];
 
-  while (index < array.length){
+function arrayOfLetter (array, iterator = 0) {
+  let outerArr = [];
+  let innerArr = [];
+
+  while (iterator < array.length){
+
     for (let el of array) {
-      letterArr.push(el[index]);
+      innerArr.push(el[iterator]);
     }
-    index++;
-    }
-    const entry = letterArr.join('');
-    theNewArr.push(entry);
-  return theNewArr;
+    iterator++;
+  }
+  outerArr.push(innerArr);
+  return outerArr;
 
 }
 
-
-
 console.log(arrayOfLetter(ABCD, ...indices));
+
+const arrayLetters = ((array) => {
+  let outerArr = [];
+  let innerArr = [];
+
+  let iterator = 0;
+  while (iterator < array.length) {
+    for (let el of array) {
+      innerArr.push(el[iterator]);
+    }
+    iterator++;
+  }
+  outerArr.push(innerArr);
+  return outerArr;
+})
+
+console.log(arrayLetters(ABCD));
+
+
+const anotherTry = array => {
+  let outerArr = [];
+  let innerArr = [];
+
+  for (let i in array) {
+    for (let el of array) {
+      innerArr.push(el[i]);
+    }
+  }
+  outerArr.push(innerArr);
+  return outerArr;
+}
+
+console.log(anotherTry(ABCD));
+
+const anotherGo = ABCD.map((el, arr) => {
+  let outerArr = [];
+  let innerArr = [];
+
+  for (let i in arr) {
+    innerArr.push(el[i]);
+  }
+  return outerArr;
+})
+
+console.log(anotherGo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
