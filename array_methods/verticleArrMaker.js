@@ -1,10 +1,13 @@
 // Goal: From that array, create an array of 4 arrays ['AAAA', 'BBBB', 'CCCC', 'DDDD']
 
 // The Starting array
-const ABCD = ['ABCD', 'ABCD', 'ABCD', 'ABCD'];
+const ABCD = ['ABCD', 'ABCD', 'ABCD', 'ABCD', 'ABCD', '1234'];
+const listLength = ABCD.length;
+const wordLength = ABCD[0].length;
+console.log(wordLength);
 
 // Creates new array of iteratores of each off array ABCD
-const indices = ABCD.map((el, iterator) => iterator); 
+// const indices = ABCD.map((el, iterator) => iterator); 
 
 
 const arrOfSlices = array => {
@@ -18,9 +21,9 @@ const arrOfSlices = array => {
   const flattened = outerArr.flat();
   let newestArr = [];
 
-  for (let x = 0; x < 16; x += 4) {
-     y = x + 4;
-    // const asdf = flattened.slice(x, y).join('');
+  for (let x = 0; x < (listLength * wordLength); x += listLength){
+    let y = x + listLength;
+
     newestArr.push(flattened.slice(x, y).join(''));
   }
 
