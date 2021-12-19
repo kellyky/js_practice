@@ -12,11 +12,18 @@ console.log(theArray);
 
 // Part 1:
 
+let newArr = theArray.filter(el => el[0] == 'a');
+
 console.log('index 0 winners');
-console.log(theArray.filter(el => el[0] == 'a'));
+console.log(newArr);
+
+let newerArr = newArr.filter(el => el[1] == 'a');
+
 console.log('index 1 winners');
-console.log(theArray.filter(el => el[1] == 'a'));
+console.log(newerArr);
+
+let newestArr = newerArr.filter(el => el[2] == 'a');
 console.log('index 2 winners');
-console.log(theArray.filter(el => el[2] == 'a'));
+console.log(newestArr);
 
 
