@@ -15,5 +15,25 @@
 */
 
 class Vec {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
 
+  }
+
+  plus(x, y) {
+    return x + y;
+
+  }
+
+  minus (x, y) {
+    return x - y;
+
+  }
 }
+
+const vector = new Vec();
+
+console.log(vector);
+console.log(vector.plus(1, 3));
+console.log(vector.minus(50, 1));
