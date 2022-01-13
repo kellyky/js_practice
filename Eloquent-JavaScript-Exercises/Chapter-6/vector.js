@@ -1,11 +1,11 @@
 /*
  *
  Write a class Vec that represents a vector in 2 space
- - Takes x and y params; these are numbers
- - saves to properties of the same name
+ - [x] Takes x and y params; these are numbers
+ - [x] saves to properties of the same name
  Give Vec 2 methods:
- - plus
- - minus
+ - [] plus
+ - [x] minus
  These should: 
   - take another vector as a param  
   - return a new vector that has the sum or difference of the two vectors' (this and the parameter) x and y vals
@@ -21,19 +21,21 @@ class Vec {
 
   }
 
-  plus(x, y) {
-    return x + y;
-
+  plus(another) {
+    return new Vec(this.x + another.x, this.y + another.y)
   }
 
-  minus (x, y) {
-    return x - y;
+  minus (another) {
+    return new Vec(this.x - another.x, this.y - another.y)
+  }
 
+  get length() {
+    return Math.sqrt((this.x ** 2) + (this.y ** 2));
+    return (this.x ** 2 + this.y ** 2) ^ 0.5;
   }
 }
 
-const vector = new Vec();
 
-console.log(vector);
-console.log(vector.plus(1, 3));
-console.log(vector.minus(50, 1));
+console.log(new Vec(1, 2).plus(new Vec(2, 3)));
+console.log(new Vec(1, 2).minus(new Vec(2, 3)));
+console.log(new Vec(3, 4).length);
