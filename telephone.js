@@ -1,23 +1,22 @@
-const RE = /^\d{3}-\d{3}-\d{4}$/;
-const RE2 = /^\(\d{3}\)\s?\d{3}-\d{4}$/;
-const RE3 = /^\d{3}\s?\d{3}\s?\d{4}$/;
-const RE4 = /^1\s\d{3}\s\d{3}\s\d{4}$/;
-const RE5 = /^1\s\d{3}-\d{3}-\d{4}$/;
-const RE6 = /^1\s?\(\d{3}\)\s?\d{3}-\d{4}$/;
+const RE = /^(1\s?)?\d{3}-?\s?\d{3}-?\s?\d{4}$/;
+const RE2 = /^(1\s?)?\(\d{3}\)\s?\d{3}-\d{4}$/;
+const RE3 = /^(1\s?)?\d{3}\s?\d{3}\s?\d{4}$/;
+
 
 
 // Create array of regexes
-const REGEXES = [RE, RE2, RE3, RE4, RE5, RE6];
+const REGEXES = [RE, RE2, RE3];
+
 
 function telephoneCheck(str) {
   // loop through regexes
   for (let regex of REGEXES){
-  
+
     // if one matches, return true
     if (regex.test(str)){
       return true;
     }
-  } 
+  }
   return false;
 }
 
