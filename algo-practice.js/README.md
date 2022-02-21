@@ -6,7 +6,7 @@ Practicing algorithm type problems -- for now, just from FreeCodeCamp.
 
 ### [Intermediate Algorithm Scripting](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#intermediate-algorithm-scripting)
 
-1. Sum all numbers in range -- link placeholder
+1. [Sum all numbers in range](https://github.com/kellyky/js_practice/blob/main/algo-practice.js/sum-all-in-range.js)
 > We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them. The lowest number will not always come first.
 
 2. Diff Two Arrays -- link placeholder
