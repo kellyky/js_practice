@@ -1,9 +1,5 @@
 function sumAll(arr){
-  let [small, big] = arr;
-
-  if (small > big){
-    [big, small] = [small, big];
-  }
+  const [small, big] = arr.sort((a, b) => a - b);
 
   let result = 0;
   for (let i = small; i <= big; i++){
