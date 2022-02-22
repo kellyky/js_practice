@@ -9,11 +9,13 @@ function mutations(arr) {
   // loop through the letters of the second element "two"
   for (let letter of two){
 
-    // logging to see 
-    console.log(letter);
-
+    // check to see if the first element "one" contains the given letter from the second element 
+    // no returns yet, just logging to console
+    console.log(one.includes(letter));
   }
 
 }
+
+console.log(mutations(["hello", "Hello"]));
 
 
