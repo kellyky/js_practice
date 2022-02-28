@@ -1,29 +1,48 @@
 // From FreeCodeCamp: Intermediate Algorithm Scripting
 // Directions: Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+// spinalCase("This Is Spinal Tap") should return the string this-is-spinal-tap.
+
+// spinalCase("thisIsSpinalTap") should return the string this-is-spinal-tap.
+
+// spinalCase("The_Andy_Griffith_Show") should return the string the-andy-griffith-show.
+
+// spinalCase("Teletubbies say Eh-oh") should return the string teletubbies-say-eh-oh.
+
+// spinalCase("AllThe-small Things") should return the string all-the-small-things.
+
 
 function spinalCase(str) {
-  // let newString = str.split(" ");
-  
   let reverseThis = [];
-  for (let i = str.length - 1; i >= 0; i--) {
-    const letter = str[i];
-    const capitalLetter = /[A-Z]/;
+  
+   if (/\s/g.test(str)){
+      return str.toLowerCase().split(" ").join('-');
+    } 
 
-    if (capitalLetter.test(letter)){
-      reverseThis.push(...[letter, " "]); 
-
-    } else {
-      reverseThis.push(letter);
-    }
+  if (/_/g.test(str)){
+    return str.toLowerCase().split("_").join('-');
   }
-  const reversedArr = reverseThis.reverse().join("");
+
+  else {
+
+    for (let i = str.length - 1; i >= 0; i--) {
+      const char = str[i];
+      const capitalLetter = /[A-Z]/;
+      if (capitalLetter.test(char)){
+        reverseThis.push(...[char, " "]);
+      } else {
+        reverseThis.push(char);
+      }
+    }
+
+  const reversedArr = reverseThis.reverse().join('').toLowerCase().split(" ").join('-');
   console.log(reversedArr);
+  return reversedArr;
 
+  }
 
-  // return str.toLowerCase().split(" ").join('-');
 }
 
+
 // console.log(spinalCase('This Is Spinal Tap'));
-// console.log(spinalCase("The_Andy_Griffith_Show"));
-console.log(spinalCase("thisIsSpinalTap"));
-// console.log(spinalCase("myCar"));
+// console.log(spinalCase("thisIsSpinalTap"));
+console.log(spinalCase("The_Andy_Griffith_Show"));
