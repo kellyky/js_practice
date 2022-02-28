@@ -9,15 +9,26 @@
 function translatePigLatin(str) {
   const vowels = ["a", "e", "i", "o", "u"];
   let localStr = str;
-  console.log(localStr);
+  const localStrArr = str.split('');
 
   const firstLetter = localStr.split('').shift()
   console.log(firstLetter);
 
-
-
+ // evaluate localStrArr for any vowels; returns true/false
+  const hasVowels = localStrArr.filter(letter => vowels.includes(letter)).length > 0; 
+// if hasVowels, check for vowel at wordstart
+  if (hasVowels){
+    if (vowels.includes(localStr[0])){
+      console.log(`${localStr} starts with a vowel`);
+    } else {
+      console.log(`${localStr} does NOT start with a vowel`);
+    } 
+  } else {
+    console.log(`${localStr} does not have ANY vowels`);
+  }
 
 }
+
 
 console.log(translatePigLatin("consonant"));
 console.log(translatePigLatin("california"));
