@@ -8,17 +8,22 @@
 
 function translatePigLatin(str) {
   let localStr = str;
-
-  // eval for vowel at word start
   const vowels = ['a', 'e', 'i', 'o', 'u'];
-  if (vowels.includes(localStr[0])){
-    console.log(`${localStr}: Hey, look at that! This word started with a vowel`);
+
+  for (let letter of localStr){
+    if (!vowels.includes(letter)){
+      return localStr += "ay";
+    } else if (vowels.includes(localStr[0])){
+      return localStr += "way";
+      
+
   } else {
     console.log(`${localStr}: This word didn't start with a voewl.`)
   }
 
   
-  // return localStr;
+  return localStr;
+}
 }
 
 console.log(translatePigLatin("consonant"));
