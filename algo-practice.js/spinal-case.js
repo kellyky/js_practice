@@ -2,47 +2,31 @@
 // Directions: Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
 // spinalCase("This Is Spinal Tap") should return the string this-is-spinal-tap.
 
-// spinalCase("thisIsSpinalTap") should return the string this-is-spinal-tap.
-
-// spinalCase("The_Andy_Griffith_Show") should return the string the-andy-griffith-show.
-
-// spinalCase("Teletubbies say Eh-oh") should return the string teletubbies-say-eh-oh.
-
-// spinalCase("AllThe-small Things") should return the string all-the-small-things.
-
 
 function spinalCase(str) {
-  let reverseThis = [];
-  
-   if (/\s/g.test(str)){
-      return str.toLowerCase().split(" ").join('-');
+  const localStr = str.replace(/(-|_)/g, " "); // replaces dashes and underscores with spaces  
+
+  let holdingArrBackwards = []; 
+  for (let i = localStr.length - 1; i >= 0; i--) {
+    const char = localStr[i];
+    const capitalLetter = /[A-Z]/;
+    holdingArrBackwards.push(char);
+
+    if (capitalLetter.test(char)){
+      holdingArrBackwards.push(" ");
     } 
-
-  if (/_/g.test(str)){
-    return str.toLowerCase().split("_").join('-');
   }
 
-  else {
+  let endString = holdingArrBackwards.reverse().join('');
+  endString = endString.replace(/\s\s/g, " ").trim();
 
-    for (let i = str.length - 1; i >= 0; i--) {
-      const char = str[i];
-      const capitalLetter = /[A-Z]/;
-      if (capitalLetter.test(char)){
-        reverseThis.push(...[char, " "]);
-      } else {
-        reverseThis.push(char);
-      }
-    }
-
-  const reversedArr = reverseThis.reverse().join('').toLowerCase().split(" ").join('-');
-  console.log(reversedArr);
-  return reversedArr;
-
-  }
+  return endString.toLowerCase().split(" ").join('-');
 
 }
 
 
-// console.log(spinalCase('This Is Spinal Tap'));
-// console.log(spinalCase("thisIsSpinalTap"));
+console.log(spinalCase('This Is Spinal Tap'));
+console.log(spinalCase("thisIsSpinalTap"));
 console.log(spinalCase("The_Andy_Griffith_Show"));
+console.log(spinalCase("Teletubbies say Eh-oh"));
+console.log(spinalCase("AllThe-small Things"));
