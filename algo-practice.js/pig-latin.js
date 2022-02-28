@@ -7,8 +7,18 @@
 
 
 function translatePigLatin(str) {
-  //
-  return str;
+  let localStr = str;
+
+  // eval for vowel at word start
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  if (vowels.includes(localStr[0])){
+    console.log(`${localStr}: Hey, look at that! This word started with a vowel`);
+  } else {
+    console.log(`${localStr}: This word didn't start with a voewl.`)
+  }
+
+  
+  // return localStr;
 }
 
 console.log(translatePigLatin("consonant"));
@@ -17,3 +27,17 @@ console.log(translatePigLatin("paragraphs"));
 console.log(translatePigLatin("eight"));
 console.log(translatePigLatin("schwartz"));
 console.log(translatePigLatin("rhythm"));
+
+
+
+// Things that need to happen:
+// - evaluate for starting vowel or consonant
+// - if cons:
+//   - remove from beginning of word
+//   - add to end of word + "ay"
+// - if vowel:
+//   - add "way" to end of word (i.e. no removal)
+//
+//
+
+
