@@ -20,12 +20,18 @@ function translatePigLatin(str) {
   if (hasVowels){
     if (vowels.includes(localStr[0])){
       console.log(`${localStr} starts with a vowel`);
+      localStr += "way";
     } else {
       console.log(`${localStr} does NOT start with a vowel`);
+      const mainWord = localStrArr.slice(1).join('') + firstLetter + "ay";
+      localStr = mainWord;
     } 
   } else {
     console.log(`${localStr} does not have ANY vowels`);
+    localStr += "ay"
   }
+
+  return localStr;
 
 }
 
