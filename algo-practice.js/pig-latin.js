@@ -13,37 +13,31 @@ function translatePigLatin(str) {
   const hasVowels = localStrArr.filter(letter => vowels.includes(letter)).length > 0; // returns T/F
   // define consonant cluster at start of word
 
-  let consCluster = "";
-  for (let i = 0; !vowels.includes(localStr[i]); i++){
-    consCluster += localStrArr[i];
-  }
-
-  console.log(consCluster);
-  
 
 
 // if hasVowels, check for vowel at wordstart
   if (hasVowels){
     if (vowels.includes(localStr[0])){
-      console.log(`${localStr} starts with a vowel`);
       localStr += "w";
     } else {
-      console.log(`${localStr} does NOT start with a vowel`);
-      const mainWord = localStrArr.slice(1).join('') + firstLetter;
+    let consCluster = "";
+    for (let i = 0; !vowels.includes(localStr[i]); i++){
+      consCluster += localStrArr[i];
+    }
+      const mainWord = localStrArr.slice(consCluster.length).join('') + consCluster;
       localStr = mainWord;
     } 
-  } 
-    console.log(`${localStr} does not have ANY vowels`);
-    localStr += "ay"
+  }
+
   
 
-  return localStr;
+  return localStr + "ay";
 
 }
 
 
 // console.log(translatePigLatin("consonant"));
 // console.log(translatePigLatin("eight"));
-console.log(translatePigLatin("schwartz"));
-// console.log(translatePigLatin("rhythm"));
+// console.log(translatePigLatin("schwartz"));
+console.log(translatePigLatin("rhythm"));
 
