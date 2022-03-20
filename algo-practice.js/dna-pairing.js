@@ -1,7 +1,6 @@
 function pairElement(str) {
 
-  // make function to get pair
-  const getPair = letter => {
+  const getPairOf = letter => {
     switch (letter){
       case "A":
         return "T";
@@ -17,21 +16,12 @@ function pairElement(str) {
         break;
     }
   }
-// console.log(getPair("A"))
 
-// loop through string
-const outerArr = [];
+const dnaPairs = [];
 for (let letter of str){
-  const subArr = [];
-  // push letter to subarr
-  subArr.push(letter, getPair(letter));
-  // push letter's pair to subarr
-  
-  // push whole subarr to outerarr
-  outerArr.push(subArr);
+  dnaPairs.push([letter, getPairOf(letter)])
 }
-
-  return outerArr;
+  return dnaPairs;
 }
 
 console.log(pairElement("GCG"));
