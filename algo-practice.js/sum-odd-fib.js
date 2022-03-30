@@ -1,14 +1,12 @@
 function sumFibs(num) {
   let lastFib = 0;
   let thisFib = 1;
-  let placeholder = 0;
   let sum = 0;
 
   while (thisFib <= num){
-    if (thisFib % 2 !== 0){
-      sum += thisFib;
-    }
-    placeholder = thisFib;
+    if (thisFib % 2 !== 0) sum += thisFib;
+      
+    const placeholder = thisFib;
     thisFib += lastFib;
     lastFib = placeholder;
   }
@@ -16,10 +14,6 @@ function sumFibs(num) {
   return sum;
 
 }
-
-
-
-
 
 
 console.log(sumFibs(1));
