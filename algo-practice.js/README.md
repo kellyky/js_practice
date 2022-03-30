@@ -16,7 +16,10 @@ Practicing algorithm type problems -- for now, just from FreeCodeCamp.
 > Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array. For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case. The arguments ["hello", "hey"] should return false because the string hello does not contain a y. Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.
 - freeCodeCamp, JavaScript and Data Structures: Basic Algorithm Scripting
 
-4. ]Sum All Odd Fibonacci Numbers
+4. Sum All Odd Fibonacci Numbers
 >Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num. The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8. For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
+
+5. Sorted Union
+>Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays. In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array. The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
 
 
