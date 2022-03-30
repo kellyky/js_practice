@@ -1,15 +1,10 @@
 function uniteUnique(...arr) {
-  const unitedArr = arr.reduce((acc, thisArr) => acc.concat(thisArr));
-  
   const uniqueArr = [];
 
-  for (let item of unitedArr){    // loop thr
-    if (!uniqueArr.includes(item)){
-      uniqueArr.push(item);
-    }
+  arr.flat().forEach(item => {
+    if (!uniqueArr.includes(item)) uniqueArr.push(item)
+  })
  
-  }
-
   return uniqueArr;
    
 }
